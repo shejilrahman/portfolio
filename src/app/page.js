@@ -46,16 +46,34 @@ export default function Portfolio() {
       {/* Main Content */}
       <main className="pt-24 flex-grow">
         {/* Hero */}
-        <section className="text-center px-6 py-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hi, I’m <span className="text-violet-400">Shejil</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400">
-            Frontend-focused JavaScript developer specialized in{" "}
-            <span className="text-gray-200 font-semibold">React & Next.js</span>
-            . Exploring Go APIs and Flutter mobile apps.
-          </p>
-        </section>
+      {/* Hero Section */}
+<section className="text-center px-6 py-16" id="hero">
+  <div className="flex flex-col items-center">
+    {/* Profile Picture */}
+    <Image
+      src="/propic_1.jpg"
+      alt="Shejil Profile Picture"
+      width={150}
+      height={150}
+      className="rounded-full border-4 border-violet-500 shadow-lg mb-6 object-cover"
+    />
+
+    {/* Name & Tagline */}
+    <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      Hi, I’m <span className="text-violet-400">Shejil</span>
+    </h1>
+    <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+      Frontend-focused JavaScript developer specialized in{" "}
+      <span className="text-gray-200 font-semibold">React & Next.js</span>.  
+      Experienced in building production-scale web solutions, with hands-on 
+      exposure to <span className="text-gray-200 font-semibold">Go APIs</span> 
+      and <span className="text-gray-200 font-semibold">PostgreSQL queries</span>.  
+      Also published a mobile app for SSC aspirants on{" "}
+      <span className="text-gray-200 font-semibold">Google Play Store</span>.
+    </p>
+  </div>
+</section>
+
 
         {/* About */}
         <section id="about" className="max-w-4xl mx-auto px-6 py-12">
@@ -129,8 +147,65 @@ export default function Portfolio() {
         <section id="projects" className="max-w-4xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold mb-8 text-center">Projects</h2>
 
+          {/* India Post Web Solution */}
+          <div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-8">
+            <h3 className="font-semibold text-xl text-gray-200 mb-3">
+              💻 India Post – Nationwide Web Solution (Next.js + Go +
+              PostgreSQL)
+            </h3>
+
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Worked as a{" "}
+              <span className="font-semibold text-gray-200">
+                Full Stack Developer
+              </span>
+              on the complete in-house web solution for{" "}
+              <span className="font-semibold text-gray-200">India Post</span>,
+              one of the world’s largest organizations handling data and
+              services. The system is deployed across{" "}
+              <span className="font-semibold text-gray-200">
+                1.5 lakh+ offices nationwide
+              </span>
+              , serving millions of customers daily.
+            </p>
+
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              The platform powers critical services including booking, tracking,
+              Postal Life Insurance (PLI), delivery of consignments, and the
+              sale of stamps and related services.
+            </p>
+
+            <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 mb-4">
+              <li>
+                Specialized in{" "}
+                <span className="text-gray-200 font-medium">Next.js</span>
+                for developing scalable, responsive, and production-ready
+                frontend modules.
+              </li>
+              <li>
+                Wrote optimized{" "}
+                <span className="text-gray-200 font-medium">
+                  PostgreSQL queries
+                </span>
+                to handle massive datasets at national scale.
+              </li>
+              <li>
+                Developed and integrated secure{" "}
+                <span className="text-gray-200 font-medium">Go APIs</span>
+                for high-performance backend operations.
+              </li>
+              <li>
+                Contributed to one of the{" "}
+                <span className="text-gray-200 font-medium">
+                  largest data-driven systems in the world
+                </span>
+                , ensuring reliable digital services for citizens across India.
+              </li>
+            </ul>
+          </div>
+
           {/* SSC Aspirant App */}
-          <div className="border border-gray-700 rounded-lg p-6 shadow-lg">
+          <div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-12">
             <h3 className="font-semibold text-xl text-gray-200 mb-3 flex items-center">
               📱 SSC Aspirant App (Flutter + Firebase)
             </h3>
@@ -178,50 +253,6 @@ export default function Portfolio() {
               ))}
             </div>
           </div>
-
-       {/* India Post Web Solution */}
-<div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-8">
-  <h3 className="font-semibold text-xl text-gray-200 mb-3">
-    💻 India Post – Nationwide Web Solution (Next.js + Go + PostgreSQL)
-  </h3>
-
-  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-    Worked as a <span className="font-semibold text-gray-200">Full Stack Developer</span> 
-    on the complete in-house web solution for{" "}
-    <span className="font-semibold text-gray-200">India Post</span>, 
-    one of the world’s largest organizations handling data and services.  
-    The system is deployed across{" "}
-    <span className="font-semibold text-gray-200">1.5 lakh+ offices nationwide</span>, 
-    serving millions of customers daily.
-  </p>
-
-  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-    The platform powers critical services including booking, tracking, 
-    Postal Life Insurance (PLI), delivery of consignments, and 
-    the sale of stamps and related services.
-  </p>
-
-  <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 mb-4">
-    <li>
-      Specialized in <span className="text-gray-200 font-medium">Next.js</span> 
-      for developing scalable, responsive, and production-ready frontend modules.
-    </li>
-    <li>
-      Wrote optimized <span className="text-gray-200 font-medium">PostgreSQL queries</span> 
-      to handle massive datasets at national scale.
-    </li>
-    <li>
-      Developed and integrated secure <span className="text-gray-200 font-medium">Go APIs</span> 
-      for high-performance backend operations.
-    </li>
-    <li>
-      Contributed to one of the{" "}
-      <span className="text-gray-200 font-medium">largest data-driven systems in the world</span>, 
-      ensuring reliable digital services for citizens across India.
-    </li>
-  </ul>
-</div>
-
         </section>
 
         {/* Growth */}
