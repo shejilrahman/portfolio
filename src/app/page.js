@@ -641,10 +641,17 @@ export default function Portfolio() {
               </span>
             </div>
             <a
-              href="https://your-app-demo-link.com"
+              href="https://play.google.com/store/apps/details?id=com.crackersclub.quizgame3"
               className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
             >
-              View Live Demo
+              View in Google Play Store
+            </a>
+            <a
+             
+              href="https://crackersclub.in"
+              className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 ml-2 rounded hover:bg-violet-600"
+            >
+              View in Web
             </a>
           </motion.div>
         </section>
@@ -693,7 +700,7 @@ export default function Portfolio() {
           </p>
           <div className="flex justify-center space-x-6">
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:shejil.ka1@gmail.com"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
@@ -701,23 +708,23 @@ export default function Portfolio() {
               📧 Email
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/shejil.ka1"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
             >
               GitHub
             </a>
-            <a
+            {/* <a
               href="https://gitlab.com/yourusername"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
             >
               GitLab
-            </a>
+            </a> */}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/shejil.ka1"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
