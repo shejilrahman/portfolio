@@ -92,7 +92,7 @@ export default function Portfolio() {
       >
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
           <Link href="/" className="text-xl font-bold text-violet-400">
-            Shejil
+            shejil.tech
           </Link>
           {/* Desktop Nav */}
           <div
@@ -454,7 +454,7 @@ export default function Portfolio() {
                   isDark ? "text-gray-200" : "text-gray-900"
                 }`}
               >
-                Full Stack Developer
+                Full Stack Developer{" "}
               </span>
               on the complete in-house web solution for{" "}
               <span
@@ -462,7 +462,7 @@ export default function Portfolio() {
                   isDark ? "text-gray-200" : "text-gray-900"
                 }`}
               >
-                India Post
+                {" "}India Post
               </span>
               , one of the world’s largest organizations handling data and
               services. The system is deployed across{" "}
@@ -498,7 +498,7 @@ export default function Portfolio() {
                     isDark ? "text-gray-200" : "text-gray-900"
                   }`}
                 >
-                  Next.js
+                  Next.js{" "}
                 </span>
                 for developing scalable, responsive, and production-ready
                 frontend modules.
@@ -510,9 +510,9 @@ export default function Portfolio() {
                     isDark ? "text-gray-200" : "text-gray-900"
                   }`}
                 >
-                  PostgreSQL queries
+                  PostgreSQL queries{" "}
                 </span>
-                to handle massive datasets at national scale.
+                to handle massive datasets at national scale.{" "}
               </li>
               <li>
                 Developed and integrated secure{" "}
@@ -521,7 +521,7 @@ export default function Portfolio() {
                     isDark ? "text-gray-200" : "text-gray-900"
                   }`}
                 >
-                  Go APIs
+                  Go APIs{" "}
                 </span>
                 for high-performance backend operations.
               </li>
@@ -539,23 +539,23 @@ export default function Portfolio() {
             </ul>
             <div className="flex space-x-2 mt-4">
               <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
-                Next.js
+                Next.js{" "}
               </span>
               <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
-                Go
+                Go{" "}
               </span>
               <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
-                PostgreSQL
+                PostgreSQL{" "}
               </span>
             </div>
-            <a
+            {/* <a
               href="https://your-live-demo-link.com"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
             >
               View Live Demo
-            </a>
+            </a> */}
           </motion.div>
 
           {/* SSC Aspirant App */}
