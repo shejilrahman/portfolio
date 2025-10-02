@@ -2,15 +2,43 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
+import { useState } from "react";
+
+function SkillCard({ title, skills }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-gray-800 p-4 rounded-lg shadow-md"
+    >
+      <h3 className="font-semibold mb-2 text-gray-200">{title}</h3>
+      <ul className="space-y-1 text-gray-300">
+        {skills.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
 
 export default function Portfolio() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200 w-full">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200 w-full font-inter">
       <Head>
         <title>Shejil – Portfolio</title>
         <meta
           name="description"
           content="Portfolio of Shejil, JavaScript and Next.js developer. Specialized in building scalable frontend apps, with full-stack and Flutter exploration."
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+          rel="stylesheet"
         />
       </Head>
 
@@ -20,60 +48,178 @@ export default function Portfolio() {
           <Link href="/" className="text-xl font-bold text-violet-400">
             Shejil
           </Link>
-          <div className="flex space-x-5 text-sm">
-            <a href="#about" className="hover:text-violet-400">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-5 text-sm">
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               About
-            </a>
-            <a href="#skills" className="hover:text-violet-400">
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               Skills
-            </a>
-            <a href="#experience" className="hover:text-violet-400">
+            </ScrollLink>
+            <ScrollLink
+              to="experience"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               Experience
-            </a>
-            <a href="#projects" className="hover:text-violet-400">
+            </ScrollLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               Projects
-            </a>
-            <a href="#growth" className="hover:text-violet-400">
+            </ScrollLink>
+            <ScrollLink
+              to="growth"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               Growth
-            </a>
-            <a href="#contact" className="hover:text-violet-400">
+            </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+            >
               Contact
-            </a>
+            </ScrollLink>
           </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-violet-400"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? "✕" : "☰"}
+          </button>
         </div>
+        {/* Mobile Nav */}
+        {isMenuOpen && (
+          <div className="md:hidden flex flex-col space-y-4 px-4 py-3 bg-gray-900 border-t border-gray-800">
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Skills
+            </ScrollLink>
+            <ScrollLink
+              to="experience"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Experience
+            </ScrollLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </ScrollLink>
+            <ScrollLink
+              to="growth"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Growth
+            </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="hover:text-violet-400 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </ScrollLink>
+          </div>
+        )}
       </nav>
 
       {/* Main Content */}
       <main className="pt-24 flex-grow">
-        {/* Hero */}
-      {/* Hero Section */}
-<section className="text-center px-6 py-16" id="hero">
-  <div className="flex flex-col items-center">
-    {/* Profile Picture */}
-    <Image
-      src="/propic_1.jpg"
-      alt="Shejil Profile Picture"
-      width={150}
-      height={150}
-      className="rounded-full border-4 border-violet-500 shadow-lg mb-6 object-cover"
-    />
+        {/* Hero Section */}
+        <section
+          className="text-center px-6 py-16 bg-gradient-to-b from-gray-900 to-gray-800"
+          id="hero"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center"
+          >
+            {/* Profile Picture */}
+            <motion.div
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                src="/propic_1.jpg"
+                alt="Shejil Profile Picture - A professional headshot of Shejil, a JavaScript developer"
+                width={150}
+                height={150}
+                className="rounded-full border-4 border-violet-500 shadow-lg mb-6 object-cover"
+              />
+            </motion.div>
 
-    {/* Name & Tagline */}
-    <h1 className="text-4xl md:text-5xl font-bold mb-4">
-      Hi, I’m <span className="text-violet-400">Shejil</span>
-    </h1>
-    <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-      Frontend-focused JavaScript developer specialized in{" "}
-      <span className="text-gray-200 font-semibold">React & Next.js</span>.  
-      Experienced in building production-scale web solutions, with hands-on 
-      exposure to <span className="text-gray-200 font-semibold">Go APIs</span> 
-      and <span className="text-gray-200 font-semibold">PostgreSQL queries</span>.  
-      Also published a mobile app for SSC aspirants on{" "}
-      <span className="text-gray-200 font-semibold">Google Play Store</span>.
-    </p>
-  </div>
-</section>
-
+            {/* Name & Tagline */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Hi, I’m <span className="text-violet-400">Shejil</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+              Frontend-focused JavaScript developer specialized in{" "}
+              <span className="text-gray-200 font-semibold">
+                React & Next.js
+              </span>
+              . Experienced in building production-scale web solutions, with
+              hands-on exposure to{" "}
+              <span className="text-gray-200 font-semibold">Go APIs</span>
+              and{" "}
+              <span className="text-gray-200 font-semibold">
+                PostgreSQL queries
+              </span>
+              . Also published a mobile app for SSC aspirants on{" "}
+              <span className="text-gray-200 font-semibold">
+                Google Play Store
+              </span>
+              .
+            </p>
+          </motion.div>
+        </section>
 
         {/* About */}
         <section id="about" className="max-w-4xl mx-auto px-6 py-12">
@@ -95,30 +241,19 @@ export default function Portfolio() {
         {/* Skills */}
         <section id="skills" className="max-w-4xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-gray-300">
-            <div>
-              <h3 className="font-semibold mb-2 text-gray-200">Core</h3>
-              <ul className="space-y-1">
-                <li>JavaScript (ES6+)</li>
-                <li>React.js</li>
-                <li>Next.js</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2 text-gray-200">Secondary</h3>
-              <ul className="space-y-1">
-                <li>Go (APIs)</li>
-                <li>Flutter (Firebase)</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2 text-gray-200">Tools</h3>
-              <ul className="space-y-1">
-                <li>GitHub & GitLab</li>
-                <li>Firebase</li>
-                <li>REST APIs</li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <SkillCard
+              title="Core"
+              skills={["JavaScript (ES6+)", "React.js", "Next.js"]}
+            />
+            <SkillCard
+              title="Secondary"
+              skills={["Go (APIs)", "Flutter (Firebase)"]}
+            />
+            <SkillCard
+              title="Tools"
+              skills={["GitHub & GitLab", "Firebase", "REST APIs"]}
+            />
           </div>
         </section>
 
@@ -148,7 +283,11 @@ export default function Portfolio() {
           <h2 className="text-2xl font-bold mb-8 text-center">Projects</h2>
 
           {/* India Post Web Solution */}
-          <div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-8">
+          <motion.div
+            whileHover={{ scale: 1.05, borderColor: "#c084fc" }}
+            transition={{ duration: 0.3 }}
+            className="border border-gray-700 rounded-lg p-6 shadow-lg mt-8 cursor-pointer"
+          >
             <h3 className="font-semibold text-xl text-gray-200 mb-3">
               💻 India Post – Nationwide Web Solution (Next.js + Go +
               PostgreSQL)
@@ -202,10 +341,31 @@ export default function Portfolio() {
                 , ensuring reliable digital services for citizens across India.
               </li>
             </ul>
-          </div>
+            <div className="flex space-x-2 mt-4">
+              <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
+                Next.js
+              </span>
+              <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
+                Go
+              </span>
+              <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
+                PostgreSQL
+              </span>
+            </div>
+            <a
+              href="https://your-live-demo-link.com"
+              className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
+            >
+              View Live Demo
+            </a>
+          </motion.div>
 
           {/* SSC Aspirant App */}
-          <div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-12">
+          <motion.div
+            whileHover={{ scale: 1.05, borderColor: "#c084fc" }}
+            transition={{ duration: 0.3 }}
+            className="border border-gray-700 rounded-lg p-6 shadow-lg mt-12 cursor-pointer"
+          >
             <h3 className="font-semibold text-xl text-gray-200 mb-3 flex items-center">
               📱 SSC Aspirant App (Flutter + Firebase)
             </h3>
@@ -244,7 +404,9 @@ export default function Portfolio() {
                 >
                   <Image
                     src={`/${src}`}
-                    alt={`App Screenshot ${i + 1}`}
+                    alt={`App Screenshot ${
+                      i + 1
+                    } - Demonstrating features of SSC Aspirant App`}
                     width={300}
                     height={600}
                     className="object-cover rounded-2xl"
@@ -252,7 +414,21 @@ export default function Portfolio() {
                 </div>
               ))}
             </div>
-          </div>
+            <div className="flex space-x-2 mt-4">
+              <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
+                Flutter
+              </span>
+              <span className="bg-violet-500 text-white px-2 py-1 rounded text-xs">
+                Firebase
+              </span>
+            </div>
+            <a
+              href="https://your-app-demo-link.com"
+              className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
+            >
+              View Live Demo
+            </a>
+          </motion.div>
         </section>
 
         {/* Growth */}
