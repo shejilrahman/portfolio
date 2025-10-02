@@ -462,7 +462,8 @@ export default function Portfolio() {
                   isDark ? "text-gray-200" : "text-gray-900"
                 }`}
               >
-                {" "}India Post
+                {" "}
+                India Post
               </span>
               , one of the world’s largest organizations handling data and
               services. The system is deployed across{" "}
@@ -705,13 +706,16 @@ export default function Portfolio() {
           </p>
           <div className="flex justify-center space-x-6">
             <a
-              href="mailto:shejil.ka1@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=shejil.ka1@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
             >
               📧 Email
             </a>
+
             <a
               href="https://github.com/shejilrahman"
               target="_blank"
@@ -731,7 +735,7 @@ export default function Portfolio() {
               GitLab
             </a> */}
             <a
-              href="https://linkedin.com/in/shejil.ka1"
+              href="https://www.linkedin.com/in/shejil-rahman"
               target="_blank"
               rel="noopener noreferrer"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
