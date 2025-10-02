@@ -550,6 +550,8 @@ export default function Portfolio() {
             </div>
             <a
               href="https://your-live-demo-link.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
             >
               View Live Demo
@@ -595,7 +597,7 @@ export default function Portfolio() {
               . Features quiz practice, progress tracking, and secure login.
               Published on{" "}
               <a
-                href="https://play.google.com/store/apps/details?id=your_app_id"
+                href="https://play.google.com/store/apps/details?id=com.crackersclub.quizgame3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-violet-400 hover:underline"
@@ -642,13 +644,16 @@ export default function Portfolio() {
             </div>
             <a
               href="https://play.google.com/store/apps/details?id=com.crackersclub.quizgame3"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
             >
               View in Google Play Store
             </a>
             <a
-             
               href="https://crackersclub.in"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-block bg-violet-500 text-white px-4 py-2 ml-2 rounded hover:bg-violet-600"
             >
               View in Web
@@ -708,7 +713,9 @@ export default function Portfolio() {
               📧 Email
             </a>
             <a
-              href="https://github.com/shejil.ka1"
+              href="https://github.com/shejilrahman"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
@@ -725,6 +732,8 @@ export default function Portfolio() {
             </a> */}
             <a
               href="https://linkedin.com/in/shejil.ka1"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hover:text-violet-400 transition-colors duration-200 ease-in-out ${
                 isDark ? "text-gray-200" : "text-gray-900"
               }`}
