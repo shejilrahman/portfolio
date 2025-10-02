@@ -21,7 +21,7 @@ export const metadata = {
     "JavaScript developer",
     "Frontend developer",
     "React developer portfolio",
-    "Web developer India"
+    "Web developer India",
   ],
   authors: [{ name: "Shejil Rahman" }],
   openGraph: {
@@ -41,8 +41,11 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.ico", // must be in /public
+    shortcut: "/favicon.ico",
+  },
 };
-
 
 export default function RootLayout({ children }) {
   return (
