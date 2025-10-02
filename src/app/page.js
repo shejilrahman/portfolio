@@ -1,102 +1,283 @@
+"use client";
+import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200 w-full">
+      <Head>
+        <title>Shejil – Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Shejil, JavaScript and Next.js developer. Specialized in building scalable frontend apps, with full-stack and Flutter exploration."
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold text-violet-400">
+            Shejil
+          </Link>
+          <div className="flex space-x-5 text-sm">
+            <a href="#about" className="hover:text-violet-400">
+              About
+            </a>
+            <a href="#skills" className="hover:text-violet-400">
+              Skills
+            </a>
+            <a href="#experience" className="hover:text-violet-400">
+              Experience
+            </a>
+            <a href="#projects" className="hover:text-violet-400">
+              Projects
+            </a>
+            <a href="#growth" className="hover:text-violet-400">
+              Growth
+            </a>
+            <a href="#contact" className="hover:text-violet-400">
+              Contact
+            </a>
+          </div>
         </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="pt-24 flex-grow">
+        {/* Hero */}
+        <section className="text-center px-6 py-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Hi, I’m <span className="text-violet-400">Shejil</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400">
+            Frontend-focused JavaScript developer specialized in{" "}
+            <span className="text-gray-200 font-semibold">React & Next.js</span>
+            . Exploring Go APIs and Flutter mobile apps.
+          </p>
+        </section>
+
+        {/* About */}
+        <section id="about" className="max-w-4xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+          <p className="text-gray-400 leading-relaxed">
+            I started my career as a React.js developer and have been working as
+            a Next.js developer for the last 2 years. At the Department of Posts
+            (CEPT), I contributed to migrating from legacy TCS systems to modern
+            in-house web solutions. I have also explored backend APIs in Go and
+            built a mobile app for SSC aspirants using Flutter & Firebase. My
+            strongest area is{" "}
+            <span className="font-semibold text-gray-200">
+              JavaScript and Next.js
+            </span>
+            .
+          </p>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="max-w-4xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4">Skills</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-gray-300">
+            <div>
+              <h3 className="font-semibold mb-2 text-gray-200">Core</h3>
+              <ul className="space-y-1">
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Next.js</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2 text-gray-200">Secondary</h3>
+              <ul className="space-y-1">
+                <li>Go (APIs)</li>
+                <li>Flutter (Firebase)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2 text-gray-200">Tools</h3>
+              <ul className="space-y-1">
+                <li>GitHub & GitLab</li>
+                <li>Firebase</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section id="experience" className="max-w-4xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4">Experience</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-200">
+                Department of Posts (CEPT) – Frontend → Full Stack
+              </h3>
+              <p className="text-gray-400 text-sm mb-2">1.5 years</p>
+              <ul className="list-disc pl-5 text-gray-400 space-y-1">
+                <li>
+                  Built React & Next.js frontend modules for in-house CEPT
+                  solution.
+                </li>
+                <li>Developed APIs in Go with guidance from AI tools.</li>
+                <li>Collaborated in migration from legacy TCS software.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="max-w-4xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-8 text-center">Projects</h2>
+
+          {/* SSC Aspirant App */}
+          <div className="border border-gray-700 rounded-lg p-6 shadow-lg">
+            <h3 className="font-semibold text-xl text-gray-200 mb-3 flex items-center">
+              📱 SSC Aspirant App (Flutter + Firebase)
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              A mobile application for exam aspirants with{" "}
+              <span className="font-semibold text-gray-200">
+                Firebase Authentication
+              </span>
+              and{" "}
+              <span className="font-semibold text-gray-200">
+                Realtime Database
+              </span>
+              . Features quiz practice, progress tracking, and secure login.
+              Published on{" "}
+              <a
+                href="https://play.google.com/store/apps/details?id=your_app_id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-violet-400 hover:underline"
+              >
+                Google Play Store
+              </a>
+              .
+            </p>
+
+            {/* Screenshots */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+              {[
+                "screen_shot_1.jpg",
+                "screen_shot_2.jpg",
+                "screen_shot_3.jpg",
+              ].map((src, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl overflow-hidden border border-gray-700 shadow-lg bg-black"
+                >
+                  <Image
+                    src={`/${src}`}
+                    alt={`App Screenshot ${i + 1}`}
+                    width={300}
+                    height={600}
+                    className="object-cover rounded-2xl"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+       {/* India Post Web Solution */}
+<div className="border border-gray-700 rounded-lg p-6 shadow-lg mt-8">
+  <h3 className="font-semibold text-xl text-gray-200 mb-3">
+    💻 India Post – Nationwide Web Solution (Next.js + Go + PostgreSQL)
+  </h3>
+
+  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+    Worked as a <span className="font-semibold text-gray-200">Full Stack Developer</span> 
+    on the complete in-house web solution for{" "}
+    <span className="font-semibold text-gray-200">India Post</span>, 
+    one of the world’s largest organizations handling data and services.  
+    The system is deployed across{" "}
+    <span className="font-semibold text-gray-200">1.5 lakh+ offices nationwide</span>, 
+    serving millions of customers daily.
+  </p>
+
+  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+    The platform powers critical services including booking, tracking, 
+    Postal Life Insurance (PLI), delivery of consignments, and 
+    the sale of stamps and related services.
+  </p>
+
+  <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 mb-4">
+    <li>
+      Specialized in <span className="text-gray-200 font-medium">Next.js</span> 
+      for developing scalable, responsive, and production-ready frontend modules.
+    </li>
+    <li>
+      Wrote optimized <span className="text-gray-200 font-medium">PostgreSQL queries</span> 
+      to handle massive datasets at national scale.
+    </li>
+    <li>
+      Developed and integrated secure <span className="text-gray-200 font-medium">Go APIs</span> 
+      for high-performance backend operations.
+    </li>
+    <li>
+      Contributed to one of the{" "}
+      <span className="text-gray-200 font-medium">largest data-driven systems in the world</span>, 
+      ensuring reliable digital services for citizens across India.
+    </li>
+  </ul>
+</div>
+
+        </section>
+
+        {/* Growth */}
+        <section id="growth" className="max-w-4xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4">Learning & Growth</h2>
+          <ul className="list-disc pl-5 text-gray-400 space-y-2">
+            <li>Strengthened core expertise in JavaScript and Next.js.</li>
+            <li>Exploring backend development with Go APIs.</li>
+            <li>Learning mobile development via Flutter & Firebase.</li>
+            <li>
+              Use AI tools like ChatGPT for faster learning and productivity.
+            </li>
+          </ul>
+        </section>
+
+        {/* Contact */}
+        <section
+          id="contact"
+          className="max-w-4xl mx-auto px-6 py-12 text-center"
+        >
+          <h2 className="text-2xl font-bold mb-4">Contact</h2>
+          <p className="text-gray-400 mb-6">
+            Interested in working together? Let’s connect.
+          </p>
+          <div className="flex justify-center space-x-6">
+            <a
+              href="mailto:youremail@example.com"
+              className="hover:text-violet-400"
+            >
+              📧 Email
+            </a>
+            <a
+              href="https://github.com/yourusername"
+              className="hover:text-violet-400"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://gitlab.com/yourusername"
+              className="hover:text-violet-400"
+            >
+              GitLab
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              className="hover:text-violet-400"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Shejil. All rights reserved.
       </footer>
     </div>
   );
